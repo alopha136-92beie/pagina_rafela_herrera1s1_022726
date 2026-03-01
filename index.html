@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Rafaela Herrera y Torreynosa</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: "Montserrat";
+            background-color: #f4f1e6;
+            color: #333;
+        }
+
+        header {
+            background-image: url("https://gacetasandinista.com/wp-content/uploads/2025/08/Rafaela-Herrera-heroina-nicaraguense.jpg");
+            background-size: 900px;
+            background-position: top;
+            background-attachment: fixed;
+            background-color: #5a4b3c;
+            border-bottom: #543 solid 10px;
+            border-radius: 0 0 9px 9px;
+            color: white;
+            text-shadow: 1px 1px 7px #333;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .subtitle {
+            font-style: italic;
+            font-size: 1.5rem;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .infobox {
+            width: 20%;
+            background: #fffaf0;
+            padding: 20px;
+            margin-right: 40px;
+            border-radius: 10px;
+            height: fit-content;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .content {
+            width: 70%;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        blockquote {
+            background: #e8e2d3;
+            padding: 15px;
+            border-left: 5px solid #5a4b3c;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* ===== TIMELINE ===== */
+
+        .timeline {
+            position: relative;
+            margin-top: 60px;
+            padding: 60px 0;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: var(--heigt, 0%);
+            background: linear-gradient(to bottom, #5a4b3c, #8b6f4d);
+            transform: translateX(-50%);
+            transition: height 0.2s ease-out;
+        }
+
+        .title-timeline {
+            width: 200px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 8px;
+            text-align: left;
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            box-shadow: 0 0 10px #3333;
+        }
+
+        .event {
+            position: relative;
+            width: 50%;
+            padding: 30px 50px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .event:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            transform: translateX(-60px);
+        }
+
+        .event:nth-child(even) {
+            left: 50%;
+            transform: translateX(60px);
+        }
+
+        .event.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .content-event {
+            background: #fffaf0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+        .event::before {
+            content: "";
+            position: absolute;
+            top: 35px;
+            width: 18px;
+            height: 18px;
+            background-color: #5a4b3c;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .event:nth-child(odd)::before {
+            right: -9px;
+        }
+
+        .event:nth-child(even)::before {
+            left: -9px;
+        }
+
+        footer {
+            background-color: #5a4b3c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .content {
+                flex-direction: column;
+            }
+
+            .infobox,
+            .content {
+                width: 100%;
+                padding: 0;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .event {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 25px;
+                text-align: left;
+                transform: translateX(-40px);
+            }
+
+            .event:nth-child(even),
+            .event:nth-child(odd) {
+                left: 0;
+            }
+
+            .event::before {
+                left: 11px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Rafaela Herrera y Torreynosa</h1>
+    <p class="subtitle">Heroína nicaragüense del siglo XVIII</p>
+</header>
+
+<main class="container">
+
+    <aside class="infobox">
+        <h3>Datos generales</h3>
+
+        <p><strong>Nombre completo:</strong><br>
+        Rafaela Herrera y Torreynosa</p>
+
+        <p><strong>Nacimiento:</strong><br>
+        1742</p>
+
+        <p><strong>Lugar:</strong><br>
+        Río San Juan, Nicaragua</p>
+
+        <p><strong>Hecho destacado:</strong><br>
+        Defensa del Castillo de la Inmaculada Concepción (1762)</p>
+
+        <p><strong>Reconocimiento:</strong><br>
+        Heroína Nacional de Nicaragua</p>
+    </aside>
+    
+    <div class="content">
+        
+        <section>
+            <h2>Introducción</h2>
+            <p>
+                Rafaela de Herrera y Torreynosa nació el 6 de agosto de 1742, en el Virreinato de Nueva Granada del Imperio Español. Aunque históricamente nació en Cartagena de Indias, su corazón y su gloria pertenecen a Nicaragua. Llegó al Río San Juan a los 11 años y, al defender con valentía el Castillo de la Inmaculada Concepción en 1762, se convirtió en nuestra Heroína Nacional por excelencia. Cabe destacar que en el siglo XVIII Nicaragua pertenecía administrativamente al Virreinato de Nueva Granada, cuya capital estaba en Santa Fe de Bogotá, pero la organización colonial española de la época hace que existan confusiones y opiniones distintas.
+            </p>
+        </section>
+
+        <section>
+            <h2>Contexto Histórico</h2>
+
+            <div class="card">
+                <p>
+                    Rafaela Herrera resaltó durante lo que respecta a la época del siglo XVIII, específicamente en el año 1762, en este tiempo contemporáneo colonial de Centroamérica, cuando Nicaragua formaba parte del Imperio Español. Este período estuvo marcado por constantes disputas territoriales entre potencias europeas, principalmente España e Inglaterra, que buscaban el control de rutas comerciales estratégicas en la región.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="timeline">
+            <h2 class="title-timeline">Línea de Tiempo</h2>
+            
+            <div class="event">
+                <div class="content-event">
+                    <h3>1742</h3>
+                    <p>Nacimiento de Rafaela Herrera.</p>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="content-event">
+                    <h3>1753</h3>
+                    <p>Llegada de Rafaela al Río San Juan, Nicaragua.</p>
+                </div>
+            </div>
+
+                        <div class="event">
+                <div class="content-event">
+                    <h3>1762</h3>
+                    <p>Defensa del Castillo y victoria frente a los británicos.</p>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section>
+            <h2>Conclusión</h2>
+            <div class="card">
+                <p>
+                    El haber analizado y estudiado bajo carácter histórico la figura de Rafaela Herrera nos ha permitido comprender la importancia de la defensa de la soberanía territorial en la construcción de la identidad nacional nicaragüense. Su gesta heroica trasciende más allá del contexto militar en el que ocurrió, ya que representa valores fundamentales como el patriotismo, el liderazgo y la resistencia frente a la dominación extranjera. El hecho de estudiar su vida y participación histórica fortalece la memoria colectiva y reafirma el papel de la historia como elemento esencial en la formación de la conciencia e identidad nacional, tanto en la juventud nicaragüense como en la familia siempre unida y soberana.
+                </p>
+            </div>
+        </section>
+        
+    </div>
+
+
+</main>
+
+<footer>
+    <p>©2026 Christian, Kleyber, Jimmy, Maya, Victor, Marcela, Yoveth — Grupo 1S1 Trabajo académico sobre historia de Nicaragua.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
